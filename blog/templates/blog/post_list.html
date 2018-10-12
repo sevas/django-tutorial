@@ -4,22 +4,13 @@
         <title>my blog</title>
     </head>
 
-    <div>
-        <h1><a href="/">my blog</a></h1>
-    </div>
+    <h1><a href="/">my blog</a></h1>
 
-    <div>
-        <p>published 2018-10-12 </p>
-        <h2><a href="">first post</a></h2>
-        <p>aenean eu leo quam. Pellentesque ornare sem laciniaquam veneatis vestibulum</p>
-    </div>
-
-    <div>
-        <p>published 2018-10-12</p>
-        <h2><a href="">second post</a></h2>
-        <p>aenean eu leo quam. Pellentesque ornare sem laciniaquam veneatis vestibulum</p>
-    </div>
-
+    {% for post in posts %}
+        <p>published: {{post.published_date}}</p>
+        <h1><a href=""> {{ post.title }}</a></h1>
+        <p> {{ post.text | linebreaksbr }}</p>
+    {% endfor%}
 
 
 </body>
